@@ -24,38 +24,21 @@ public class Main {
         System.out.println("String yang dihasilkan: " + largeString);
     }
 
-//    private static BigInteger factorial(int n) {
-//        try {
-//            Thread.sleep(100);
-//        } catch (InterruptedException e) {
-//            Thread.currentThread().interrupt();
-//        }
-//        return (n <= 1) ? BigInteger.ONE : BigInteger.valueOf(n).multiply(factorial(n - 1));
-//    }
-
     private static BigInteger factorial(int n) {
-        BigInteger result = BigInteger.ONE;
-        for (int i = 2; i <= n; i++) {
-            result = result.multiply(BigInteger.valueOf(i));
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
         }
-        return result;
+        return (n <= 1) ? BigInteger.ONE : BigInteger.valueOf(n).multiply(factorial(n - 1));
     }
 
-
-//    private static String generateLargeString(int size) {
-//        String result = "";
-//        for (int i = 0; i < size; i++) {
-//            result += "a";
-//        }
-//        return result;
-//    }
-
     private static String generateLargeString(int size) {
-        StringBuilder builder = new StringBuilder(size);
+        String result = "";
         for (int i = 0; i < size; i++) {
-            builder.append("a");
+            result += "a";
         }
-        return builder.toString();
+        return result;
     }
 
 }
