@@ -11,17 +11,17 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Masukkan angka untuk dihitung faktorialnya: ");
+        System.out.print("Enter the number to calculate its factorial: ");
         int factorialNumber = scanner.nextInt();
 
-        System.out.print("Masukkan ukuran string yang akan dibuat: ");
+        System.out.print("Enter the size of the string to be generated: ");
         int stringSize = scanner.nextInt();
 
         BigInteger factorialResult = factorial(factorialNumber);
-        System.out.println("Faktorial dari " + factorialNumber + " adalah: " + factorialResult);
+        System.out.println("The factorial of " + factorialNumber + " is: " + factorialResult);
 
         String largeString = generateLargeString(stringSize);
-        System.out.println("String yang dihasilkan: " + largeString);
+        System.out.println("Generated string: " + largeString);
     }
 
     private static BigInteger factorial(int n) {
@@ -40,5 +40,4 @@ public class Main {
         }
         return result;
     }
-
 }
