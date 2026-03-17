@@ -9,19 +9,22 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
 
-        System.out.print("Enter the number to calculate its factorial: ");
-        int factorialNumber = scanner.nextInt();
+            System.out.print("Enter the number to calculate its factorial: ");
+            int factorialNumber = scanner.nextInt();
 
-        System.out.print("Enter the size of the string to be generated: ");
-        int stringSize = scanner.nextInt();
+            System.out.print("Enter the size of the string to be generated: ");
+            int stringSize = scanner.nextInt();
 
-        BigInteger factorialResult = factorial(factorialNumber);
-        System.out.println("The factorial of " + factorialNumber + " is: " + factorialResult);
+            BigInteger factorialResult = factorial(factorialNumber);
+            System.out.println("The factorial of " + factorialNumber + " is: " + factorialResult);
 
-        String largeString = generateLargeString(stringSize);
-        System.out.println("Generated string: " + largeString);
+            String largeString = generateLargeString(stringSize);
+            System.out.println("Generated string: " + largeString);
+
+            scanner.close();
+        }
     }
 
     private static BigInteger factorial(int n) {
